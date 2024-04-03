@@ -1,4 +1,4 @@
-import { ITask } from '@/types/tasks'
+import { ITask } from '../../types/tasks'
 import React from 'react'
 import Task from './Task'
 

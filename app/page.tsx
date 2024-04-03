@@ -1,7 +1,7 @@
 import Image from "next/image";
 import AddTask from "./components/AddTask";
 import TodoList from "./components/TodoList";
-import { getAllTodoos } from "@/api";
+import { getAllTodoos } from "../api";
 
 
 

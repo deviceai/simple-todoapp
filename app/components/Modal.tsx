@@ -7,17 +7,20 @@ interface ModalProps {
 
 }
 
-const Modal: React.FC<ModalProps> = ({modalOpen, setModalOpen, children}) => {
+const Modal: React.FC<ModalProps> = ({ modalOpen, setModalOpen, children }) => {
   return (
-    <div className={`modal ${modalOpen ? "modal-open" : ""}`} role="dialog">
-  <div className="modal-box">
-  {children}
-    <div className="modal-action">
-      <label onClick={() => setModalOpen(false)} htmlFor="my_modal_6" className="btn">Close!</label>
+    <div className={`modal ${modalOpen ? "modal-open" : ""}`}>
+      <div className='modal-box relative'>
+        <label
+          onClick={() => setModalOpen(false)}
+          className='btn btn-sm btn-circle absolute right-2 top-2'
+        >
+          ✕
+        </label>
+        {children}
+      </div>
     </div>
-  </div>
-</div>
-  )
-}
+  );
+};
 
 export default Modal
