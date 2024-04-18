@@ -2,7 +2,7 @@ FROM node:lts-alpine
 RUN apk update && apk add bash
 RUN apk add --no-cache libc6-compat
 RUN mkdir -p /home/todo-app/node_modules && chown -R node:node /home/todo-app
-RUN mkdir -p /home/todo-app/.next && chown -R node:node /home/todo-app/.next
+#RUN mkdir -p /home/todo-app/.next && chown -R node:node /home/todo-app/.next
 
 ENV NEXT_TELEMETRY_DISABLED 1
 
@@ -14,7 +14,7 @@ COPY --chown=node:node . .
 RUN npm install
 RUN npm run build
 
-COPY --chown=next:node /.next/static ./.next/static
+#COPY --chown=next:node /.next/static ./.next/static
 RUN chown -R node:node /home/todo-app/.next
 COPY --chown=node:node /public ./public
 
